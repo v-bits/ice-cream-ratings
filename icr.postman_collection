@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "5de56fe0-5e48-4a44-b38f-c662eeb10c0f",
+		"name": "ohs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetRating",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ic-ratings.azurewebsites.net/api/GetRating?ratingId=98338ea3-74f8-4216-4a8f-08daa68663a8",
+					"protocol": "https",
+					"host": [
+						"ic-ratings",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"GetRating"
+					],
+					"query": [
+						{
+							"key": "ratingId",
+							"value": "98338ea3-74f8-4216-4a8f-08daa68663a8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetRatings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ic-ratings.azurewebsites.net/api/GetRatings?userId=cc20a6fb-a91f-4192-874d-132493685376",
+					"protocol": "https",
+					"host": [
+						"ic-ratings",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"GetRatings"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "cc20a6fb-a91f-4192-874d-132493685376"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateRating",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"cc5581ff-6be1-4418-a8d8-55a29c24b995\",\r\n    \"productId\": \"80bab959-ef8b-4ae3-8bf2-e876d77277b6\",\r\n    \"locationName\": \"B&N\",\r\n    \"rating\": 5,\r\n    \"userNotes\": \"Awesome!!!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://ic-ratings.azurewebsites.net/api/CreateRating",
+					"protocol": "https",
+					"host": [
+						"ic-ratings",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"CreateRating"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
