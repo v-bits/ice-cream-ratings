@@ -10,7 +10,7 @@ internal class Startup : FunctionsStartup
 {
     public override void Configure(IFunctionsHostBuilder builder)
     {
-        string connectionString = Environment.GetEnvironmentVariable("ConnectionStrings:ICR_CONNECTION_STRING");
+        string connectionString = builder.GetContext().Configuration["ConnectionStrings:ICR_CONNECTION_STRING"];
         Uri uri = new Uri("https://serverlessohapi.azurewebsites.net");
 
         builder.Services.AddHttpClient("api", client => client.BaseAddress = uri);
