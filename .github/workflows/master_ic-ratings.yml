@@ -38,6 +38,6 @@ jobs:
         id: fa
         with:
           app-name: 'ic-ratings'
-          slot-name: 'Staging'
+          slot-name: 'Production'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_905C158A4E6D458A949D17475A40ECB7 }}
