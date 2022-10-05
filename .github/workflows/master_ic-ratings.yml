@@ -8,10 +8,11 @@ on:
     branches:
       - master
   workflow_dispatch:
-
+  
 env:
   AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # set this to the path to your web app project, defaults to the repository root
   DOTNET_VERSION: '6.0.x' # set this to the dotnet version to use
+  SLOT: ${{ github.inputs.slots }}
 
 jobs:
   build-and-deploy:
@@ -37,6 +38,6 @@ jobs:
         id: fa
         with:
           app-name: 'ic-ratings'
-          slot-name: 'Production'
+          slot-name: 'Staging'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_905C158A4E6D458A949D17475A40ECB7 }}
